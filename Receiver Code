@@ -1,0 +1,68 @@
+void setup() {
+  for (int i = 10; i <=13; i++) {
+    pinMode(i, INPUT);
+  }
+  pinMode(3, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+void forward() {
+  if(forward)
+  {
+  digitalWrite(3, 1);
+  digitalWrite(5, 0);
+  digitalWrite(6, 1);
+  digitalWrite(9, 0);  
+  }
+  
+
+}
+void backward() {
+  digitalWrite(3, 0);
+  digitalWrite(5, 1);
+  digitalWrite(6, 0);
+  digitalWrite(9, 1);
+
+}
+void stop_() {
+  digitalWrite(3, 0);
+  digitalWrite(5, 0);
+  digitalWrite(6, 0);
+  digitalWrite(9, 0);
+
+}
+void right() {
+  digitalWrite(3, 1);
+  digitalWrite(5, 0);
+  digitalWrite(6, 0);
+  digitalWrite(9, 1);
+
+}
+void left() {
+  digitalWrite(3, 0);
+  digitalWrite(5, 1);
+  digitalWrite(6, 1);
+  digitalWrite(9, 0);
+
+}
+
+
+void loop() {
+  if ((digitalRead(10) == HIGH) && (digitalRead(11) == LOW) && (digitalRead(12) == HIGH) && (digitalRead(13) == LOW)) {
+    forward();
+  }
+  else if ((digitalRead(10) == LOW) && (digitalRead(11) == HIGH) && (digitalRead(12) == LOW) && (digitalRead(13) == HIGH)) {
+    
+    backward();
+  }
+  else if((digitalRead(10) == LOW) && (digitalRead(11) == LOW) && (digitalRead(12) == LOW) && (digitalRead(13) == LOW)) {
+    stop_(); }
+ else if ((digitalRead(10) == HIGH) && (digitalRead(11) == LOW) && (digitalRead(12) == LOW ) && (digitalRead(13) == HIGH)) {
+   right();
+  }
+  else if ((digitalRead(10) == LOW) && (digitalRead(11) == HIGH) && (digitalRead(12) == HIGH) && (digitalRead(13) == LOW)) {
+    left();
+  }
+  
+}
