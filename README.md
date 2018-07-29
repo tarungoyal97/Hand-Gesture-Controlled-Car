@@ -1,3 +1,3 @@
 # Hand-Gesture-Controlled-Car
-Arduino based project
+Arduino based project:-
 In this project, we are giving directions to a car prototype remotely through hand gestures. We have designed a small circuit which a person can wear on hand like a glove. The transmitter circuit consists of a Acelerometer module i.e. ADXL335,Atmega328 with its driver circuit and uploaded with Arduino ide, RF transmitter module and a small battery. All this circuit can be placed on a glove. The accelerometer is programmed to sense the position of hand during different gestures and encoding them and sending the encoded data through RF to the receiver which is placed on the car. The receiver collects the data and after decoding the data, it rotates the motors of car according to the gestures. The receiver circuit consists of Atmega328 with is driver circuit and uploaded with Arduino ide,Decoder, RF receiver module, LN298 motor driver module.
